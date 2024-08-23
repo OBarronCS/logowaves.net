@@ -88,7 +88,7 @@ My hope is that these contributions encourage people to use Pwndbg to debug and 
 
 Finally, a huge thank you to my mentors, Dominik 'Disconnect3d' Czarnota and Gulshan Singh!
 
-# Future Work:
+# Future work
 
 You can categorize instructions into 5 broad groups: branch instructions, load instructions, store instructions, arithmetic instructions, and everything else. This project focused on the first four groups, providing annotations on general-purpose instructions. Future work could integrate annotations for SIMD and floating point operations.
 
@@ -103,35 +103,36 @@ Architecture References:
 - RISC-V Assembly Language Manual - https://shakti.org.in/docs/risc-v-asm-manual.pdf
 
 
-List of Pull Requests (TODO add names to these):
-- https://github.com/pwndbg/pwndbg/pull/2381
-- https://github.com/pwndbg/pwndbg/pull/2377
-- https://github.com/pwndbg/pwndbg/pull/2374
-- https://github.com/pwndbg/pwndbg/pull/2368
-- https://github.com/pwndbg/pwndbg/pull/2364
-- https://github.com/pwndbg/pwndbg/pull/2363
-- https://github.com/pwndbg/pwndbg/pull/2357
-- https://github.com/pwndbg/pwndbg/pull/2356
-- https://github.com/pwndbg/pwndbg/pull/2346
-- https://github.com/pwndbg/pwndbg/pull/2337
-- https://github.com/pwndbg/pwndbg/pull/2328
-- https://github.com/pwndbg/pwndbg/pull/2317
-- https://github.com/pwndbg/pwndbg/pull/2309
-- https://github.com/pwndbg/pwndbg/pull/2303
-- https://github.com/pwndbg/pwndbg/pull/2295
-- https://github.com/pwndbg/pwndbg/pull/2292
-- https://github.com/pwndbg/pwndbg/pull/2281
-- https://github.com/pwndbg/pwndbg/pull/2279
-- https://github.com/pwndbg/pwndbg/pull/2278
-- https://github.com/pwndbg/pwndbg/pull/2275
-- https://github.com/pwndbg/pwndbg/pull/2262
-- https://github.com/pwndbg/pwndbg/pull/2261
-- https://github.com/pwndbg/pwndbg/pull/2260
-- https://github.com/pwndbg/pwndbg/pull/2259
-- https://github.com/pwndbg/pwndbg/pull/2251
-- https://github.com/pwndbg/pwndbg/pull/2241
-- https://github.com/pwndbg/pwndbg/pull/2205
-- https://github.com/pwndbg/pwndbg/pull/2193
+List of Pull Requests:
+- Fix virtual memory mappings on remote targets - https://github.com/pwndbg/pwndbg/pull/2386
+- Fix ARM Cortex-M detection - https://github.com/pwndbg/pwndbg/pull/2381
+- Update developer documentation - https://github.com/pwndbg/pwndbg/pull/2377
+- Test suite for annotations - https://github.com/pwndbg/pwndbg/pull/2374
+- AArch64 conditional instructions + others - https://github.com/pwndbg/pwndbg/pull/2368
+- Miscellaneous annotations improvements - https://github.com/pwndbg/pwndbg/pull/2364
+- Store instruction annotations - https://github.com/pwndbg/pwndbg/pull/2363
+- Fix crash in argument resolution while reading register - https://github.com/pwndbg/pwndbg/pull/2357
+- Arithmetic instruction annotations - https://github.com/pwndbg/pwndbg/pull/2356
+- Fix annotation crash on Arm - https://github.com/pwndbg/pwndbg/pull/2346
+- Correctly initialize Arm mode in Unicorn Engine - https://github.com/pwndbg/pwndbg/pull/2337
+- Pause GDB event handlers while exploring memory - https://github.com/pwndbg/pwndbg/pull/2328
+- x86 fs/gs register support in Unicorn and annotations - https://github.com/pwndbg/pwndbg/pull/2317
+- Load instruction annotations - https://github.com/pwndbg/pwndbg/pull/2309
+- CMP-like instructions in AArch64, Arm - https://github.com/pwndbg/pwndbg/pull/2303
+- Fix tests in Ubuntu 24.04 - https://github.com/pwndbg/pwndbg/pull/2295
+- Arm Thumb support with Unicorn + Capstone - https://github.com/pwndbg/pwndbg/pull/2292
+- Display Arm mode in banner - https://github.com/pwndbg/pwndbg/pull/2281
+- Fix edge case in stepuntilasm - https://github.com/pwndbg/pwndbg/pull/2279
+- Bitwise math helper functions - https://github.com/pwndbg/pwndbg/pull/2278
+- Rehaul testing structure to allow for QEMU user space unit tests - https://github.com/pwndbg/pwndbg/pull/2275
+- Support MIPS delay slots - https://github.com/pwndbg/pwndbg/pull/2262
+- Simplify detection of function-call-like instructions - https://github.com/pwndbg/pwndbg/pull/2261
+- Reimport disassembly code - https://github.com/pwndbg/pwndbg/pull/2260
+- Manually resolve AArch64 conditional branches - https://github.com/pwndbg/pwndbg/pull/2259
+- Display link register by default in register view - https://github.com/pwndbg/pwndbg/pull/2251
+- Add ABI for 64-bit MIPS - https://github.com/pwndbg/pwndbg/pull/2241
+- Display names of syscalls that occur in the future - https://github.com/pwndbg/pwndbg/pull/2205
+- Indicate private API functions - https://github.com/pwndbg/pwndbg/pull/2193
 - x86 Annotations - https://github.com/pwndbg/pwndbg/pull/2001
 
 
