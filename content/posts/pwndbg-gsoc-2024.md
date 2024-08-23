@@ -6,12 +6,9 @@ toc = false
 # toc_sticky = true
 +++
 
+This summer, I worked on [Pwndbg](https://github.com/pwndbg/pwndbg/), a GDB dashboard popular among reverse engineers and exploit developers, and something I use nearly every weekend for [CTFs](https://ctftime.org/team/12858/). Pwndbg allows you to quickly see the state of CPU registers and stack memory, provides a view of the disassembled machine instructions near the instruction pointer, and offers powerful context and control while debugging binaries.
 
-# Google Summer of Code Report - Otso Barron
-
-This summer, I worked on [Pwndbg](https://github.com/pwndbg/pwndbg/), a GDB dashboard popular among reverse engineers and exploit developers, and something I use every weekend for [CTFs](https://ctftime.org/team/12858/). Pwndbg allows you to quickly see the state of CPU registers and stack memory, provides a view of the disassembled machine instructions near the instruction pointer, and offers powerful context and control while debugging binaries.
-
-My project aimed to enhance the disassembly view while debugging RISC-V, ARM, and MIPS processes. Combining emulation and binary instrumentation, I built a system to annotate the assembly instructions with text to indicate the action each one takes. For mathematical operations, we display the values of the operands as well as the result, and for load/store instructions we indicate the memory address in use and the value being moved.
+My project aimed to enhance the disassembly view of Pwndbg while debugging RISC-V, ARM, and MIPS processes. Combining emulation and binary instrumentation, I built a system to annotate the assembly instructions with text to indicate the action each one takes. For mathematical operations, we display the values of the operands as well as the result, and for load/store instructions we indicate the memory address in use and the value being moved.
 
 
 {{< image src="/images/riscv_annotations.png" caption="Disassembly view of a RISC-V program">}}
@@ -21,26 +18,26 @@ This project expands upon previous contributions of mine which created this anno
 
 # The details
 
-First, let’s start with some examples of instruction annotations. This RISC-V `add` instruction gets the annotation seen on the right. It indicates the values of the source operands, `a5` and `a2`, that are used in the add operation, as well as the resulting value that the instruction will place into register `a4`.
-
+First, let’s start with some examples of instruction annotations. The following is an example of a RISC-V `add` instruction with its annotation. The text indicates the values of the source operands, `a5` and `a2`, which are used in the add operation, as well as the resulting value that the instruction will place into register `a4`.
 
 ```asm
 add a4, a5, a2         A4 => 0x555555558000 (0x4000 + 0x555555554000)
 ```
 
-Here’s a MIPS store instruction - it takes the value in the t2 register, treats it as a word (32-bits) and places it into the memory location defined by the second operand. 
+Here’s a MIPS store instruction - it takes the value in the `v1` register, treats it as a word (32-bits) and places it into the memory location defined by the second operand. The annotation indicates the concrete memory address used in the operation (`0x4040c0`), and the value placed into it (`0x203`).
+
+
 ```asm
 sw $v1, 0x20($v0)      [0x4040c0] => 0x203
 ```
-The annotation indicates the concrete memory address used in the operation (`0x4040c0`), and the value placed into it (`0x203`).
 
 And here’s a load instruction found in AArch64:
 ```asm
 ldrsh w1, [x0]         W1, [0x555555576fc8] => 0x19
 ```
-To determine the value that will be loaded in w1, we read 2 bytes from the memory location `0x555555576fc8` and sign-extend it to 4 bytes. This is just one example of AArch64’s over 20 unique load instructions!
+To determine the value that will be loaded in `w1`, we read 2 bytes from the memory location `0x555555576fc8` and sign-extend it to 4 bytes. This is just one example of AArch64’s over 20 unique load instructions!
 
-![insert screenshot here](file_here)
+![insert screenshot here](insert_screenshot_here)
 
 For this project, I needed to dig into the internals of RISC-V, ARM, and MIPS to understand what types of instructions are present, what kinds of actions they take, and how operands are used. Every architecture has unique aspects that require special care - such as Arm's Thumb mode or MIPS's delay slots - and there are edge cases until the eye can see.
 
