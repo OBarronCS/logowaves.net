@@ -37,7 +37,7 @@ ldrsh w1, [x0]         W1, [0x555555576fc8] => 0x19
 ```
 To determine the value that will be loaded in `w1`, we read 2 bytes from the memory location `0x555555576fc8` and sign-extend it to 4 bytes. This is just one example of AArch64’s over 20 unique load instructions!
 
-![insert screenshot here](insert_screenshot_here)
+{{< image src="/images/arm_hello_world.png" caption="32-bit ARM \"Hello, World!\" - we show symbols and detect strings!">}}
 
 For this project, I needed to dig into the internals of RISC-V, ARM, and MIPS to understand what types of instructions are present, what kinds of actions they take, and how operands are used. Every architecture has unique aspects that require special care - such as Arm's Thumb mode or MIPS's delay slots - and there are edge cases until the eye can see.
 
@@ -77,7 +77,7 @@ Around two hundred instructions across Arm, MIPS, and RISC-V now have annotation
 
 {{< image src="/images/arm_instructions.png" caption="Arm instructions - we follow transitions to and from Thumb mode!">}}
 
-!(insert another screenshot here)[]
+{{< image src="/images/riscv_branch_and_print.png" caption="The disassembly view follows conditional branches">}}
 
 The testing code was updated to allow us to validate the non-x86 Pwndbg experience using QEMU for emulation, and a suite of tests was added to the codebase so that I can sleep well at night. 
 
