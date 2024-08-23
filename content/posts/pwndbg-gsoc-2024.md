@@ -73,13 +73,13 @@ Some annotations can be resolved statically, like ones that move a constant into
 
 # Current State
 
-Around two hundred instructions across Arm, MIPS, and RISC-V now have annotations. The most common general-purpose instructions now automatically display the result of the instruction, providing users of Pwndbg with insight into instructions being executed, and adding information to the dashboard that otherwise you would need to fish out manually using a variety of intricate GDB commands that vary depending on the context. While I'm debugging through a binary with Pwndbg nowadays, I often nearly ignore the instructions themselves, and focus on the annotations, and they greatly speed up reverse engineering efforts.
+Around two hundred instructions across Arm, MIPS, and RISC-V now have annotations. The most common general-purpose instructions now automatically display the result of the instruction, providing users of Pwndbg with insight into instructions being executed, and adding information to the dashboard that otherwise you would need to fish out manually using a variety of intricate GDB commands that vary depending on the context. While I'm debugging through a binary with Pwndbg nowadays, I often nearly ignore the instructions themselves, and focus on the annotations. They greatly speed up reverse engineering efforts.
 
 {{< image src="/images/arm_instructions.png" caption="Arm instructions - we follow transitions to and from Thumb mode!">}}
 
 {{< image src="/images/riscv_branch_and_print.png" caption="The disassembly view follows conditional branches">}}
 
-The testing code was updated to allow us to validate the non-x86 Pwndbg experience using QEMU for emulation, and a suite of tests was added to the codebase so that I can sleep well at night. 
+The testing code was also updated to allow us to validate the non-x86 Pwndbg experience using QEMU for emulation, and a suite of tests was added to the codebase so that I can sleep well at night. 
 
 
 # Final thoughts
