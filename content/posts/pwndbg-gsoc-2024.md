@@ -133,6 +133,9 @@ List of Pull Requests:
 - Add ABI for 64-bit MIPS - https://github.com/pwndbg/pwndbg/pull/2241
 - Display names of syscalls that occur in the future - https://github.com/pwndbg/pwndbg/pull/2205
 - Indicate private API functions - https://github.com/pwndbg/pwndbg/pull/2193
-- x86 Annotations - https://github.com/pwndbg/pwndbg/pull/2001
 
+Prior Pull Requests:
+- x86 Annotations - https://github.com/pwndbg/pwndbg/pull/2001
+- Print Sigreturn Frame - https://github.com/pwndbg/pwndbg/pull/1940
+- Display offset to framepointer in disassembly view - https://github.com/pwndbg/pwndbg/pull/1925
 
