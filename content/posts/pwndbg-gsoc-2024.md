@@ -6,7 +6,7 @@ toc = false
 # toc_sticky = true
 +++
 
-This summer, I worked on [Pwndbg](https://github.com/pwndbg/pwndbg/), a GDB dashboard popular among reverse engineers and exploit developers, and something I use nearly every weekend for [CTFs](https://ctftime.org/team/12858/). Pwndbg allows you to quickly see the state of CPU registers and stack memory, provides a view of the disassembled machine instructions near the instruction pointer, and offers powerful context and control while debugging binaries.
+This summer, I worked on [Pwndbg](https://github.com/pwndbg/pwndbg/), a GDB dashboard popular among reverse engineers and exploit developers, and something I use nearly every weekend for [CTF](https://ctftime.org/team/12858/). Pwndbg allows you to quickly see the state of CPU registers and stack memory, provides a view of the disassembled machine instructions near the instruction pointer, and offers powerful context and control while debugging binaries.
 
 My project aimed to enhance the disassembly view of Pwndbg while debugging RISC-V, ARM, and MIPS processes. Combining emulation and binary instrumentation, I built a system to annotate the assembly instructions with text to indicate the action each one takes. For mathematical operations, we display the values of the operands as well as the result, and for load/store instructions we indicate the memory address in use and the value being moved.
 
@@ -84,7 +84,7 @@ The testing code was also updated to allow us to validate the non-x86 Pwndbg exp
 
 # Final thoughts
 
-My hope is that these contributions encourage people to use Pwndbg to debug and reverse engineer in these new architectures, and most of all to help you CTFers to get more flags! Not only do these annotations provide much-needed context to aid in debugging, but they provide insight to anyone learning about assembly languages - you can visually see what each instruction is doing to get a better grasp of low level programming.
+My hope is that these contributions encourage people to use Pwndbg to debug and reverse engineer in these new architectures, and most of all help you CTFers get more flags! Not only do these annotations provide much-needed context to aid in debugging, but they provide insight to anyone learning about assembly languages - you can visually see what each instruction is doing to get a better grasp of low level programming.
 
 Finally, a huge thank you to my mentors, Dominik 'Disconnect3d' Czarnota and Gulshan Singh!
 
