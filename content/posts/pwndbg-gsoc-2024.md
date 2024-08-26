@@ -57,7 +57,7 @@ After identifying the instruction and determining the values of its operands, th
 
 We use [Unicorn Engine](https://www.unicorn-engine.org/) for emulation. We copy the process's memory and CPU registers into the emulator and start stepping it instruction-by-instruction. At each step, we query the emulator for the memory and register values relevant to the current instruction. This is how we can show the results of mathematical operations, determine the outcome of branches, and know the contents of memory in the future. Emulation allows us to display annotations for instructions that the CPU is about to execute, providing a great level of context.
 
-A lot of hours went into getting the emulator to work nicely with all the architectures. A highlight was [getting Arm Thumb mode to work](https://github.com/pwndbg/pwndbg/pull/2292) and finding an intricacy of the Arm architecture - banked registers - [that caused the stack pointer to always be zero](https://github.com/pwndbg/pwndbg/pull/2337s). MIPS delay slots also threw a wrench into the system. 
+A lot of hours went into getting the emulator to work nicely with all the architectures. A highlight was [getting Arm Thumb mode to work](https://github.com/pwndbg/pwndbg/pull/2292) and finding an intricacy of the Arm architecture - banked registers - [that caused the stack pointer to always be zero](https://github.com/pwndbg/pwndbg/pull/2337). MIPS delay slots also threw a wrench into the system. 
 
 {{< image src="/images/mips_delay_slots.png" caption="MIPS has delay slots!">}}
 
