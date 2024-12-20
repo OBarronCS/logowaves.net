@@ -12,10 +12,12 @@ Debugging and reverse-engineering binary programs is typically a challenging and
 
 Even with debugging symbols, the user is forced to expend substantial effort to manually track this contextual information and correlate any state changes with the execution of an instruction. This manual process also assumes expert-level domain knowledge of the instruction set architecture in question—understanding the intricacies, side-effects, subtle instruction variations, and underlying computing model—which poses a significant barrier.
 
-My project aimed to enhance the disassembly view of Pwndbg while debugging RISC-V, ARM, MIPS, and x86 processes. Combining emulation and binary instrumentation, I built a system to annotate the assembly instructions with text to indicate the action each one takes. For mathematical operations, we display the values of the operands as well as the result, and for load/store instructions we indicate the memory address in use and the value being moved.
+My project aimed to enhance the disassembly view of Pwndbg while debugging RISC-V, ARM, and MIPS processes. Combining emulation and binary instrumentation, I built a system to annotate the assembly instructions with text to indicate the action each one takes. For mathematical operations, we display the values of the operands as well as the result, and for load/store instructions we indicate the memory address in use and the value being moved.
 
 
 {{< image src="/images/riscv_annotations.png" caption="Disassembly view of a RISC-V program">}}
+
+This project expands upon previous contributions of mine which introduced this annotation feature for x86.
 
 
 # The details
