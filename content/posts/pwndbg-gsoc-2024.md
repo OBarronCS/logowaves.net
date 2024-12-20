@@ -26,7 +26,7 @@ First, let’s start with some examples of instruction annotations. The followin
 add a4, a5, a2         A4 => 0x555555558000 (0x4000 + 0x555555554000)
 ```
 
-Here’s a MIPS store instruction - it takes the value in the `v1` register, treats it as a word (32-bits) and places it into the memory location defined by the second operand. The annotation indicates the concrete memory address used in the operation (`0x4040c0`), and the value placed into it (`0x203`).
+Here is a MIPS store instruction - it takes the value in the `v1` register, treats it as a word (32-bits) and places it into the memory location defined by the second operand. The annotation indicates the concrete memory address used in the operation (`0x4040c0`), and the value placed into it (`0x203`).
 
 
 ```asm
@@ -55,9 +55,9 @@ For each architecture, I dug into the Instruction Set Architecture (ISA) manuals
 
 {{< image src="/images/aarch64_example.png" caption="Example AArch64 Disassembly">}}
 
-After identifying the instruction and determining the values of its operands, then we can go about creating an annotation. Instructions are handled case-by-case, although due to patterns in instruction types, we can process many in the same way. Consider arithmetic operations that act on registers - things like `add`, `sub`, `xor`, `and`, `cmp`, bit shifts, and more. We want to display the value that the instruction will put into the destination register. To do this, we need emulation.
+After identifying the instruction and determining the values of its operands, we can go about creating an annotation. Instructions are handled case-by-case, although due to patterns in instruction types, we can process many in the same way. Consider arithmetic operations that act on registers - things like `add`, `sub`, `xor`, `and`, `cmp`, bit shifts, and more. We want to display the value that the instruction will put into the destination register. To do this, we need emulation.
 
-We use [Unicorn Engine](https://www.unicorn-engine.org/) for emulation. We copy the process's memory and CPU registers into the emulator and start stepping it instruction-by-instruction. At each step, we query the emulator for the memory and register values relevant to the current instruction. This is how we can show the results of mathematical operations, determine the outcome of branches, and know the contents of memory in the future. Emulation allows us to display annotations for instructions that the CPU is about to execute, providing a great level of context.
+We use [Unicorn Engine](https://www.unicorn-engine.org/) for emulation. We copy the process' memory and CPU registers into the emulator and start stepping it instruction-by-instruction. At each step, we query the emulator for the memory and register values relevant to the current instruction. This is how we can show the results of mathematical operations, determine the outcome of branches, and know the contents of memory in the future. Emulation allows us to display annotations for instructions that the CPU is about to execute, providing a great level of context.
 
 A lot of hours went into getting the emulator to work nicely with all the architectures. A highlight was [getting Arm Thumb mode to work](https://github.com/pwndbg/pwndbg/pull/2292) and finding an intricacy of the Arm architecture - banked registers - [that caused the stack pointer to always be zero](https://github.com/pwndbg/pwndbg/pull/2337). MIPS delay slots also threw a wrench into the system. 
 
