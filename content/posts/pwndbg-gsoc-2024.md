@@ -43,7 +43,7 @@ To determine the value that will be loaded in `w1`, we read 2 bytes from the mem
 
 {{< image src="/images/arm_hello_world.png" caption="32-bit ARM \"Hello, World!\" - we show symbols and detect strings!">}}
 
-For this project, I needed to dig into the internals of RISC-V, ARM, and MIPS to understand what types of instructions are present, what kinds of actions they take, and how operands are used. Every architecture has unique aspects that require special care - such as Arm's Thumb mode or MIPS's delay slots - and there are edge cases until the eye can see.
+For this project, I dug into the internals of RISC-V, ARM, and MIPS to understand what types of instructions are present, what kinds of actions they take, and how operands are used. Every architecture has unique aspects that require special care - such as Arm's Thumb mode or MIPS's delay slots - and there are edge cases until the eye can see.
 
 The first step in creating an annotation is identifying the instruction and resolving the concrete values of the operands. Using the [Capstone Engine](https://www.capstone-engine.org/), we disassemble instructions and get programmatic access to the operand details and other metadata. We need to resolve the values of the operands, which can involve reading a register or dereferencing a memory address.
 
