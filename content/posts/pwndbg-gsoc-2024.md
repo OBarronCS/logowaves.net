@@ -6,9 +6,9 @@ toc = false
 # toc_sticky = true
 +++
 
-This summer, I worked on [Pwndbg](https://github.com/pwndbg/pwndbg/), a GDB dashboard popular among reverse engineers and exploit developers, and something I use nearly every weekend for [CTF](https://ctftime.org/team/12858/). Pwndbg allows you to quickly see the state of CPU registers and stack memory, provides a view of the disassembled machine instructions near the instruction pointer, and offers powerful context and control while debugging binaries.
+This summer, I worked on [Pwndbg](https://github.com/pwndbg/pwndbg/), a GDB dashboard popular among reverse-engineers and exploit developers, and something I use nearly every weekend for [CTF](https://ctftime.org/team/12858/). Pwndbg allows you to quickly see the state of CPU registers and stack memory, provides a view of the disassembled machine instructions near the instruction pointer, and offers powerful context and control while debugging binaries.
 
-Debugging and reverse-engineering binary programs is typically a challenging and laborious process due to the substantial effort required to understand what the program is doing. The debugger’s user needs to understand the effects and implications of each assembly instruction's execution—how memory addresses, CPU state, and register values change—which requires knowledge of the instruction’s context—the contents of memory, CPU state, and register values—at the time of execution.
+Debugging and reverse engineering binary programs is typically a challenging and laborious process due to the substantial effort required to understand what the program is doing. The debugger’s user needs to understand the effects and implications of each assembly instruction's execution—how memory addresses, CPU state, and register values change—which requires knowledge of the instruction’s context—the contents of memory, CPU state, and register values—at the time of execution.
 
 Even with debugging symbols, the user is forced to expend substantial effort to manually track this contextual information and correlate any state changes with the execution of an instruction. This manual process also assumes expert-level domain knowledge of the instruction set architecture in question—understanding the intricacies, side-effects, subtle instruction variations, and underlying computing model—which poses a significant barrier.
 
@@ -77,7 +77,7 @@ Some annotations can be resolved statically, like ones that move a constant into
 
 # Current State
 
-Around two hundred instructions across Arm, MIPS, and RISC-V now have annotations. The most common general-purpose instructions now automatically display the result of the instruction, providing users of Pwndbg with insight into instructions being executed, and adding information to the dashboard that otherwise you would need to fish out manually using a variety of intricate GDB commands that vary depending on the context. While I'm debugging through a binary with Pwndbg nowadays, I often nearly ignore the instructions themselves, and focus on the annotations. They greatly speed up reverse engineering efforts.
+Around two hundred instructions across Arm, MIPS, and RISC-V now have annotations. The most common general-purpose instructions now automatically display the result of the instruction, providing users of Pwndbg with insight into instructions being executed, and adding information to the dashboard that otherwise you would need to fish out manually using a variety of intricate GDB commands that vary depending on the context. While I'm debugging through a binary with Pwndbg nowadays, I often nearly ignore the instructions themselves, and focus on the annotations. They greatly speed up reverse-engineering efforts.
 
 {{< image src="/images/arm_instructions.png" caption="Arm instructions - we follow transitions to and from Thumb mode!">}}
 
