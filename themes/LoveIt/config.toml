@@ -181,7 +181,7 @@
       title = "Welcome to Otso's blog"
       # subtitle shown in home page (HTML format is supported)
       # 主页显示的网站副标题 (允许 HTML 格式)
-      subtitle = "I am a student at Oregon State University - <u><a target='blank' href='https://web.engr.oregonstate.edu/~barrono/'> check out my academic website</a></u>"
+      subtitle = ""
       # whether to use typeit animation for subtitle
       # 是否为副标题显示打字机动画
       typeit = false
@@ -202,7 +202,7 @@
   # 主页的社交信息设置
   [params.social]
     GitHub = "OBarronCS"
-    Linkedin = "otsobarron"
+    Linkedin = ""
     Twitter = ""
     Instagram = ""
     Facebook = ""

@@ -45,14 +45,6 @@ enableRobotsTXT = true
   #   url = "/categories/"
   #   title = ""
 
-  [[menu.main]]
-    weight = 3
-    identifier = "about"
-    pre = ""
-    post = ""
-    name = "About Me"
-    url = "https://web.engr.oregonstate.edu/~barrono/"
-    title = ""
 
 # Markup related configuration in Hugo
 [markup]
